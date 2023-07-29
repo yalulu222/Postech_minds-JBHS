@@ -32,8 +32,9 @@ def custom_model(shape=(100, 100)):
     return model
 
 model = custom_model(shape=shape)
-model.summary()
-env.initialize_with_noise(0.001)
+# model.summary()
+
+env.initialize_with_noise(0.01)
 # 모델 생성
 model = custom_model()
 
@@ -50,4 +51,4 @@ xy_input_data = np.array([env.model_pen_position])  # (1, 2)
 output_xy = model.predict([array_input_data, index_input_data, xy_input_data])
 
 np.shape(output_xy[0])
-print(output_xy[0,0])
+print(output_xy[0,:])
